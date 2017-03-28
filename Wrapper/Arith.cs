@@ -161,7 +161,7 @@ namespace ArrayFire
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Array $1(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_$L1(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
 #else
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Array Atan2(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_atan2(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -170,6 +170,9 @@ namespace ArrayFire
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Array Pow(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_pow(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
 #endif
-		#endregion
-	}
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Array Mul(Array arr1, Array arr2) { IntPtr ptr; Internal.VERIFY(AFArith.af_mul(out ptr, arr1._ptr, arr2._ptr, true)); return new Array(ptr); }
+
+        #endregion
+    }
 }
