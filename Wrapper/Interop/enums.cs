@@ -341,4 +341,12 @@ namespace ArrayFire.Interop
 		AF_MARKER_PLUS         = 6,
 		AF_MARKER_STAR         = 7
 	}
+
+    public enum af_binary_op
+    {
+        AF_BINARY_ADD = 0,
+        AF_BINARY_MUL = 1,
+        AF_BINARY_MIN = 2,
+        AF_BINARY_MAX = 3
+    }
 }

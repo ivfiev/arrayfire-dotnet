@@ -140,13 +140,13 @@ namespace ArrayFire
 		public static Array operator $1(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_$2(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
 #else
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Array operator +(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_add(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
+		public static Array operator +(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_add(out ptr, lhs._ptr, rhs._ptr, true)); return new Array(ptr); }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Array operator -(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_sub(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Array operator *(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_mul(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
+		public static Array operator *(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_mul(out ptr, lhs._ptr, rhs._ptr, true)); return new Array(ptr); }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Array operator /(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_div(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
@@ -236,7 +236,15 @@ namespace ArrayFire
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Array Cols(int first, int last) { return this[Util.Span, Util.Seq(first, last)]; }
+        #endregion
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Array CumOp(Array arr, int dim, BinaryOp op)
+        {
+            IntPtr ptr;
+            Internal.VERIFY(AFArray.af_scan(out ptr, arr._ptr, dim, op, true));
+            return new Array(ptr);
+        }
     }
-    #endregion
 }
 

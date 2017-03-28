@@ -170,8 +170,8 @@ namespace ArrayFire
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Array Pow(Array lhs, Array rhs) { IntPtr ptr; Internal.VERIFY(AFArith.af_pow(out ptr, lhs._ptr, rhs._ptr, false)); return new Array(ptr); }
 #endif
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Array Mul(Array arr1, Array arr2) { IntPtr ptr; Internal.VERIFY(AFArith.af_mul(out ptr, arr1._ptr, arr2._ptr, true)); return new Array(ptr); }
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //public static Array Mul(Array arr1, Array arr2) { IntPtr ptr; Internal.VERIFY(AFArith.af_mul(out ptr, arr1._ptr, arr2._ptr, true)); return new Array(ptr); }
 
         #endregion
     }

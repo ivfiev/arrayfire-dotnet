@@ -476,5 +476,8 @@ namespace ArrayFire.Interop
 
 		[DllImport(af_config.dll, ExactSpelling = true, SetLastError = false, CallingConvention = CallingConvention.Cdecl)]
 		public static extern af_err af_is_bool(out bool result, IntPtr array_arr);
-	}
+
+        [DllImport(af_config.dll, ExactSpelling = true, SetLastError = false, CallingConvention = CallingConvention.Cdecl)]
+        public static extern af_err af_scan(out IntPtr result, IntPtr array_arr, int dim, BinaryOp op, bool inklusiv);
+    }
 }

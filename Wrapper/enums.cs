@@ -51,4 +51,12 @@ namespace ArrayFire
         DEFAULT = af_backend.AF_BACKEND_DEFAULT,
         OPENCL = af_backend.AF_BACKEND_OPENCL
     }
+
+    public enum BinaryOp
+    {
+        Add = af_binary_op.AF_BINARY_ADD,
+        Mul = af_binary_op.AF_BINARY_MUL,
+        Min = af_binary_op.AF_BINARY_MIN,
+        Max = af_binary_op.AF_BINARY_MAX,
+    }
 }

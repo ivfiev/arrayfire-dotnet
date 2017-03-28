@@ -46,5 +46,5 @@ namespace ArrayFire
 			Internal.VERIFY(AFBlas.af_dot(out ptr, lhs._ptr, rhs._ptr, lconj ? af_mat_prop.AF_MAT_CONJ : af_mat_prop.AF_MAT_NONE, rconj ? af_mat_prop.AF_MAT_CONJ : af_mat_prop.AF_MAT_NONE));
 			return new Array(ptr);
 		}
-	}
+    }
 }
