@@ -457,7 +457,7 @@ namespace ArrayFire
 			if (dims.Length == 1) // column vector
 				data = new T[dims[0], 1];
 			else
-				data = new T[dims[0], dims[1]];
+				data = new T[dims[1], dims[0]];
 			Internal.VERIFY(Internal.getData<T>(data, arr._ptr));
 			return data;
 		}

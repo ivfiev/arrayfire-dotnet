@@ -239,7 +239,7 @@ namespace ArrayFire
         #endregion
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Array CumOp(Array arr, int dim, BinaryOp op)
+        public static Array Scanl1(Array arr, int dim, BinaryOp op)
         {
             IntPtr ptr;
             Internal.VERIFY(AFArray.af_scan(out ptr, arr._ptr, dim, op, true));
