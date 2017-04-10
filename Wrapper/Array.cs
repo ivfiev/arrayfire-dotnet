@@ -238,6 +238,14 @@ namespace ArrayFire
         public Array Cols(int first, int last) { return this[Util.Span, Util.Seq(first, last)]; }
         #endregion
 
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //public static Array Scanl(Array arr, int dim, BinaryOp op)
+        //{
+        //    IntPtr ptr;
+        //    Internal.VERIFY(AFArray.af_scan(out ptr, arr._ptr, dim, op, false));
+        //    return new Array(ptr);
+        //}
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Array Scanl1(Array arr, int dim, BinaryOp op)
         {

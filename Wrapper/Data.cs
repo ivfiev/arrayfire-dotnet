@@ -455,7 +455,7 @@ namespace ArrayFire
 			if (dims.Length > 2) throw new NotSupportedException("This array has more than two dimensions");
 			T[,] data;
 			if (dims.Length == 1) // column vector
-				data = new T[dims[0], 1];
+				data = new T[1, dims[0]];
 			else
 				data = new T[dims[1], dims[0]];
 			Internal.VERIFY(Internal.getData<T>(data, arr._ptr));
